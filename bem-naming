@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Name: cli version of https://github.com/bem-sdk/bem-naming
+
+# Usage:
+# bem-naming bem_dfsf isBlockMod        # (stdout: "True")
+# bem-naming bem__fdsfs_dfsf isBlockMod # (stdout: "\n")
+# bem-naming bem__fdsfs_dfsf isElemMod  # True
+# bem-naming foo__bar_baz .block        # foo
+# bem-naming foo__bar_baz .elem         # bar
+
+# Deps: jq (https://stedolan.github.io/jq/), node, bem-naming (https://github.com/bem-sdk/bem-naming)
+
+BLOCK=$1
+QUERY=$2
+if [ "$(echo $QUERY | grep is)" ]; then
+    node -p "require('bem-naming').$QUERY('$BLOCK') ? 'True' : ''"
+else
+    node -p "JSON.stringify(require('bem-naming').parse('$BLOCK'))" | jq -r $QUERY
+fi
