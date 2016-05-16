@@ -1,0 +1,15 @@
+{
+  "name": "bem-naming-cli",
+  "description": "cli version of https://github.com/bem-sdk/bem-naming",
+  "version": "1.0.0",
+  "maintainers": [
+    {
+      "name": "Alexander Mekhonoshin",
+      "email": "invntrm@gmail.com",
+      "web": ""
+    }
+  ],
+  "dependencies": {
+    "git@github.com:bem-sdk/bem-naming.git": "^1.0.0"
+  }
+}
