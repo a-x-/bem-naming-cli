@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Name: cli version of https://github.com/bem-sdk/bem-naming
+# Descr: cli version of https://github.com/bem-sdk/bem-naming
 
 # Usage:
 # bem-naming bem_dfsf isBlockMod        # (stdout: "True")
